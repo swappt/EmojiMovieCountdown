@@ -1,0 +1,72 @@
+<Countdown>
+  caption: caption
+  selector: selector
+
+  Label:
+    text: self.parent.time_str
+    font_size: root.width * 1 / 6
+    center: root.center
+
+  Label:
+    id: caption
+    text: self.parent.units[self.parent.unit] + ' remaining until the emoji movie is officially released in ' + self.parent.country
+    font_size: root.width * 1 / 40
+    center: root.center_x,root.center_y - root.height * 1 / 8
+
+  Button:
+    background_color: 0,0,0,0
+    size: root.width,root.height
+    pos: 0,0
+    on_press: root.change_units()
+
+  Button:
+    id: selector
+    size_hint_y: None
+    size: root.width * 1 / 6, root.height * 1 / 10
+    pos: 0,0
+    on_release: dropdown.open(self)
+
+  DropDown:
+
+    id: dropdown
+    on_select: selector.text = '{}'.format(args[1])
+
+    Button:
+      text: 'North America'
+      size_hint_y: None
+      on_release: dropdown.select('North America')
+
+    Button:
+      text: 'UK'
+      size_hint_y: None
+      on_release: dropdown.select('UK')
+
+    Button:
+      text: 'Australia'
+      size_hint_y: None
+      on_release: dropdown.select('Australia')
+
+    Button:
+      text: 'France'
+      size_hint_y: None
+      on_release: dropdown.select('France')
+
+    Button:
+      text: 'Germany'
+      size_hint_y: None
+      on_release: dropdown.select('Germany')
+
+    Button:
+      text: 'Sweden'
+      size_hint_y: None
+      on_release: dropdown.select('Sweden')
+
+    Button:
+      text: 'Spain'
+      size_hint_y: None
+      on_release: dropdown.select('Spain')
+
+    Button:
+      text: 'Italy'
+      size_hint_y: None
+      on_release: dropdown.select('Italy')

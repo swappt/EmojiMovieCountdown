@@ -1,5 +1,10 @@
 from kivy.app import App
-from kivy.properties import ObjectProperty, NumericProperty
+from kivy.properties import ObjectProperty, StringProperty
+from kivy.uix.widget import Widget
+from kivy.clock import Clock
+from kivy.uix.dropdown import DropDown
+
+from time import time
 
 adverts = True
 try: #'!!!! this line should be removed upon release !!!!'
@@ -11,7 +16,63 @@ if adverts: #'!!!! this line should be removed upon release !!!!'
   PythonActivity = autoclass('org.kivy.android.PythonActivity')
   AdBuddiz = autoclass('com.purplebrain.adbuddiz.sdk.AdBuddiz')
 
-class EmojiApp(App)
+class CountryDrop(DropDown):
+  pass
+
+
+class Countdown(Widget):
+  caption = ObjectProperty(None)
+  selector = ObjectProperty(None)
+  dropdown = ObjectProperty(None)
+
+  time = time()
+  time_emojimovie = {
+    'UK': 1501804800,
+    'North America': 1501200000,
+    'Australia': 1505347200,
+    'France': 1508284800,
+    'Germany': 1501718400,
+    'Sweden': 1502236800,
+    'Spain': 1502409600,
+    'Italy': 1511827200
+  }
+
+  country = 'North America'
+
+  time_remaining = time_emojimovie[country] - time
+  time_str = StringProperty('%.2f' % time_remaining)
+  unit = 0
+  units = ['seconds','minutes','hours','days']
+
+  def __init__(self, *args, **kwargs):
+    super(Countdown,self).__init__(*args,**kwargs)
+    Clock.schedule_interval(self.update,0)
+
+  def update(self,t):
+    self.time = time()
+    self.time_remaining = self.time_emojimovie[self.country] - self.time
+    if self.unit == 0:
+      self.time_str = '%.2f' % self.time_remaining
+    elif self.unit == 1:
+      self.time_str = '%.2f' % (self.time_remaining/60)
+    elif self.unit == 2:
+      self.time_str = '%.2f' % (self.time_remaining/3600)
+    else:
+      self.time_str = '%.2f' % (self.time_remaining/86400)
+
+    self.caption.text = self.units[self.unit] + ' remaining until the emoji movie is officially released in ' + self.country
+    if self.selector.text != '':
+      self.country = self.selector.text
+
+
+  def change_units(self):
+    print('change')
+    self.unit += 1
+    if self.unit >= 4:
+      self.unit = 0
+
+
+class EmojiApp(App):
   def build(self):
     if adverts:
       AdBuddiz.setPublisherKey('ENTER KEY')
@@ -19,8 +80,8 @@ class EmojiApp(App)
       AdBuddiz.cacheAds(PythonActivity.mActivity)
       AdBuddiz.showAd(PythonActivity.mActivity)
 
-    self.m = Manager()
-    return m
+    self.main = Countdown()
+    return self.main
 
 emoji = EmojiApp()
 emoji.run()
