@@ -12,8 +12,8 @@ echo 'Build process beginning...'
 
 openssl aes-256-ecb -d -in org-swappt-blip-app.keystore.aes-256-ecb -out org-swappt-blip-app.keystore
 
-export P4A_RELEASE_KEYSTORE=~/blip-app/org-swappt-blip-app.keystore
-export P4A_RELEASE_KEYALIAS=blip
+export P4A_RELEASE_KEYSTORE=~/EmojiMovieCountdown/emoji.keystore
+export P4A_RELEASE_KEYALIAS=emoji
 export P4A_RELEASE_KEYSTORE_PASSWD=$2
 export P4A_RELEASE_KEYALIAS_PASSWD=$2
 
