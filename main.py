@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from kivy.app import App
 from kivy.properties import ObjectProperty, StringProperty
 from kivy.uix.widget import Widget
@@ -19,7 +21,6 @@ if adverts: #'!!!! this line should be removed upon release !!!!'
 class CountryDrop(DropDown):
   pass
 
-
 class Countdown(Widget):
   caption = ObjectProperty(None)
   selector = ObjectProperty(None)
@@ -36,7 +37,7 @@ class Countdown(Widget):
     'España': 1502409600,
     'Italia': 1511827200
   }
-  
+
   translations = {
     'North America': ' remaining until the emoji movie is officially released in ',
     'UK': ' remaining until the emoji movie is officially released in ',
@@ -86,7 +87,7 @@ class Countdown(Widget):
       else:
         self.time_str = '%.2f' % (self.time_remaining/86400)
 
-    self.caption.text = self.units[self.country[self.unit]] + self.translations[self.country] + self.country
+    self.caption.text = self.units[self.country][self.unit] + self.translations[self.country] + self.country
     if self.selector.text != '':
       self.country = self.selector.text
 
@@ -101,8 +102,8 @@ class Countdown(Widget):
 class EmojiApp(App):
   def build(self):
     if adverts:
-      AdBuddiz.setPublisherKey('ENTER KEY')
-      AdBuddiz.setTestModeActive()
+      AdBuddiz.setPublisherKey('63e0dc24-70e2-4517-afb3-d1adb6d809a4')
+      #AdBuddiz.setTestModeActive()
       AdBuddiz.cacheAds(PythonActivity.mActivity)
       AdBuddiz.showAd(PythonActivity.mActivity)
 

@@ -22,13 +22,13 @@ source.include_exts = py,png,jpg,kv,atlas
 #source.exclude_exts = spec
 
 # (list) List of directory to exclude (let empty to not exclude anything)
-#source.exclude_dirs = tests, bin
+source.exclude_dirs = .git,bin,org_assets
 
 # (list) List of exclusions using pattern matching
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 0.1
+version = 1.0
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
@@ -46,10 +46,10 @@ requirements = kivy,python2
 #garden_requirements =
 
 # (str) Presplash of the application
-presplash.filename = loading_screen.png
+presplash.filename = org_assets/loading_screen.png
 
 # (str) Icon of the application
-#icon.filename = %(source.dir)s/data/icon.png
+icon.filename = org_assets/icon.png
 
 # (str) Supported orientation (one of landscape, portrait or all)
 orientation = portrait
@@ -78,11 +78,7 @@ osx.kivy_version = 1.9.1
 fullscreen = 0
 
 # (string) Presplash background color (for new android toolchain)
-# Supported formats are: #RRGGBB #AARRGGBB or one of the following names:
-# red, blue, green, black, white, gray, cyan, magenta, yellow, lightgray,
-# darkgray, grey, lightgrey, darkgrey, aqua, fuchsia, lime, maroon, navy,
-# olive, purple, silver, teal.
-#android.presplash_color = #FFFFFF
+android.presplash_color = #333333
 
 # (list) Permissions
 android.permissions = INTERNET,ACCESS_WIFI_STATE,ACCESS_NETWORK_STATE

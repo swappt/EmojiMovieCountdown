@@ -9,7 +9,7 @@
 
   Label:
     id: caption
-    text: self.parent.units[self.parent.unit] + ' remaining until the emoji movie is officially released in ' + self.parent.country
+    text: self.parent.units[self.parent.country][self.parent.unit] + ' remaining until the emoji movie is officially released in ' + self.parent.country
     font_size: root.width * 1 / 40
     center: root.center_x,root.center_y - root.height * 1 / 8
 
@@ -34,39 +34,47 @@
     Button:
       text: 'North America'
       size_hint_y: None
+      background_normal: 'assets/flags/north_america.png'
       on_release: dropdown.select('North America')
 
     Button:
       text: 'UK'
       size_hint_y: None
+      background_normal: 'assets/flags/uk.png'
       on_release: dropdown.select('UK')
 
     Button:
       text: 'Australia'
       size_hint_y: None
+      background_normal: 'assets/flags/australia.png'
       on_release: dropdown.select('Australia')
 
     Button:
       text: 'France'
       size_hint_y: None
+      background_normal: 'assets/flags/france.png'
       on_release: dropdown.select('France')
 
     Button:
       text: 'Deutschland'
       size_hint_y: None
-      on_release: dropdown.select('Germany')
+      background_normal: 'assets/flags/germany.png'
+      on_release: dropdown.select(self.text)
 
     Button:
       text: 'Sverige'
       size_hint_y: None
-      on_release: dropdown.select('Sweden')
+      background_normal: 'assets/flags/sweden.png'
+      on_release: dropdown.select(self.text)
 
     Button:
       text: 'España'
       size_hint_y: None
-      on_release: dropdown.select('Spain')
+      background_normal: 'assets/flags/spain.png'
+      on_release: dropdown.select(self.text)
 
     Button:
       text: 'Italia'
       size_hint_y: None
-      on_release: dropdown.select('Italy')
+      background_normal: 'assets/flags/italy.png'
+      on_release: dropdown.select(self.text)
