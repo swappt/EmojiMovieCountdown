@@ -7,7 +7,7 @@ title = EMOJI MOVIE COUNTDOWN
 package.name = emojicountdown
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.swappt.emojicountdown
+package.domain = org.swappt
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -132,7 +132,7 @@ android.ndk = 9d
 # their classes. Don't add jars that you do not need, since extra jars can slow
 # down the build process. Allows wildcards matching, for example:
 # OUYA-ODK/libs/*.jar
-#android.add_jars = foo.jar,bar.jar,path/to/more/*.jar
+android.add_jars = libs/*.jar
 
 # (list) List of Java files to add to the android project (can be java or a
 # directory containing the files)
@@ -220,7 +220,7 @@ android.arch = armeabi-v7a
 [buildozer]
 
 # (int) Log level (0 = error only, 1 = info, 2 = debug (with command output))
-log_level = 1
+log_level = 2
 
 # (int) Display warning if buildozer is run as root (0 = False, 1 = True)
 warn_on_root = 1
