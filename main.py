@@ -51,14 +51,21 @@ class Countdown(Widget):
   def update(self,t):
     self.time = time()
     self.time_remaining = self.time_emojimovie[self.country] - self.time
-    if self.unit == 0:
-      self.time_str = '%.2f' % self.time_remaining
-    elif self.unit == 1:
-      self.time_str = '%.2f' % (self.time_remaining/60)
-    elif self.unit == 2:
-      self.time_str = '%.2f' % (self.time_remaining/3600)
+    if -86400 < self.time_remaining < 0:
+      self.time_str = 'The Emoji Movie comes out today!'
+      self.caption.text = ''
+    elif self.time_remaining < -86400:
+      self.time_str = 'You missed the party...'
+      self.caption.text = 'Come back for the sequel'
     else:
-      self.time_str = '%.2f' % (self.time_remaining/86400)
+      if self.unit == 0:
+        self.time_str = '%.2f' % self.time_remaining
+      elif self.unit == 1:
+        self.time_str = '%.2f' % (self.time_remaining/60)
+      elif self.unit == 2:
+        self.time_str = '%.2f' % (self.time_remaining/3600)
+      else:
+        self.time_str = '%.2f' % (self.time_remaining/86400)
 
     self.caption.text = self.units[self.unit] + ' remaining until the emoji movie is officially released in ' + self.country
     if self.selector.text != '':
