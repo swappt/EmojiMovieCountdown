@@ -36,6 +36,17 @@ class Countdown(Widget):
     'España': 1502409600,
     'Italia': 1511827200
   }
+  
+  translations = {
+    'North America': ' remaining until the emoji movie is officially released in '
+    'UK': ' remaining until the emoji movie is officially released in '
+    'Australia': ' remaining until the emoji movie is officially released in '
+    'France': ' Jusqu\'à ce que le EMOJI MOVIE soit officiellement publié en '
+    'Deutschland': ' Bis der EMOJI MOVIE offiziell freigegeben wird '
+    'Sverige': ' återstår tills EMOJI MOVIE är officiellt släppt i '
+    'España': ' permaneciendo hasta que EMOJI MOVIE sea lanzado oficialmente en '
+    'Italia': ' rimanendo fino a quando l\'EMOJI MOVIE è ufficialmente rilasciato '
+  }
 
   country = 'North America'
 
@@ -75,7 +86,7 @@ class Countdown(Widget):
       else:
         self.time_str = '%.2f' % (self.time_remaining/86400)
 
-    self.caption.text = self.units[self.country[self.unit]] + ' remaining until the emoji movie is officially released in ' + self.country
+    self.caption.text = self.units[self.country[self.unit]] + self.translations[self.country] + self.country
     if self.selector.text != '':
       self.country = self.selector.text
 
