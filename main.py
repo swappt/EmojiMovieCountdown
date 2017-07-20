@@ -41,8 +41,8 @@ class Countdown(Widget):
     'North America': ' remaining until the emoji movie is officially released in ',
     'UK': ' remaining until the emoji movie is officially released in ',
     'Australia': ' remaining until the emoji movie is officially released in ',
-    'France': ' Jusqu\'à ce que le EMOJI MOVIE soit officiellement publié en ',
-    'Deutschland': ' Bis der EMOJI MOVIE offiziell freigegeben wird ',
+    'France': ' jusqu\'à ce que le EMOJI MOVIE soit officiellement publié en ',
+    'Deutschland': ' bis der EMOJI MOVIE offiziell freigegeben wird ',
     'Sverige': ' återstår tills EMOJI MOVIE är officiellt släppt i ',
     'España': ' permaneciendo hasta que EMOJI MOVIE sea lanzado oficialmente en ',
     'Italia': ' rimanendo fino a quando l\'EMOJI MOVIE è ufficialmente rilasciato '
