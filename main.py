@@ -42,8 +42,16 @@ class Countdown(Widget):
   time_remaining = time_emojimovie[country] - time
   time_str = StringProperty('%.2f' % time_remaining)
   unit = 0
-  units = ['seconds','minutes','hours','days']
-
+  units = {
+    'North America': ['seconds','minutes','hours','days'],
+    'UK': ['seconds','minutes','hours','days'],
+    'Australia': ['seconds','minutes','hours','days'],
+    'France': ['secondes', 'minutes', 'heures', 'jours'],
+    'Deutschland': ['sekunden', 'minuten', 'stunden', 'tage'],
+    'Sverige': ['sekunder', 'minuter', 'timmar', 'dagar'],
+    'España': ['segundos', 'minutos', 'horas', 'días'],
+    'Italia': ['secondi', 'minuti', 'ore', 'giorni']
+  }
   def __init__(self, *args, **kwargs):
     super(Countdown,self).__init__(*args,**kwargs)
     Clock.schedule_interval(self.update,0)
@@ -67,7 +75,7 @@ class Countdown(Widget):
       else:
         self.time_str = '%.2f' % (self.time_remaining/86400)
 
-    self.caption.text = self.units[self.unit] + ' remaining until the emoji movie is officially released in ' + self.country
+    self.caption.text = self.units[self.country[self.unit]] + ' remaining until the emoji movie is officially released in ' + self.country
     if self.selector.text != '':
       self.country = self.selector.text
 
