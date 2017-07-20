@@ -31,10 +31,10 @@ class Countdown(Widget):
     'North America': 1501200000,
     'Australia': 1505347200,
     'France': 1508284800,
-    'Germany': 1501718400,
-    'Sweden': 1502236800,
-    'Spain': 1502409600,
-    'Italy': 1511827200
+    'Deutschland': 1501718400,
+    'Sverige': 1502236800,
+    'España': 1502409600,
+    'Italia': 1511827200
   }
 
   country = 'North America'
