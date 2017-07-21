@@ -35,7 +35,7 @@ class Countdown(Widget):
     'Deutschland': 1501718400,
     'Sverige': 1502236800,
     'España': 1502409600,
-    'Italia': 1511827200
+    'Italia': 1506556800
   }
 
   translations = {
