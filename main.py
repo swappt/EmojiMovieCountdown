@@ -29,8 +29,8 @@ class Countdown(Widget):
   time = time()
   time_emojimovie = {
     'UK': 1501804800,
-    'North America': 1501218000,
-    'Australia': 1505347200,
+    'North America': 1501228800,
+    'Australia': 1505314800,
     'France': 1508284800,
     'Deutschland': 1501718400,
     'Sverige': 1502236800,

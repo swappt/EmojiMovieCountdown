@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = UNOFFICIAL EMOJI MOVIE COUNTDOWN
+title = EMOJI MOVIE COUNTDOWN
 
 # (str) Package name
 package.name = emojicountdown
@@ -28,7 +28,7 @@ source.exclude_dirs = .git,bin,org_assets
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 1.0.1
+version = 1.0.2
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
